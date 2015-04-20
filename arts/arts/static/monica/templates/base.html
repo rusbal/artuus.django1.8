@@ -1,0 +1,144 @@
+{# {% load menu_tags sekizai_tags %} #}
+<!DOCTYPE html>
+<html style="" class="  page-exhibitions page-exhibition page-exhibition-current js no-touch hashchange history draganddrop backgroundsize csstransforms csstransforms3d csstransitions localstorage"><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+	<title>artuus.com</title> 
+    {% block html_head %}
+    {% endblock %}
+	<script>(function(){
+		var html = document.documentElement;
+		html.className = html.className.replace('no-js', '');
+	})();</script> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script><![endif]--> 
+<script>
+window.settings = {
+    static_url: '/static/',
+    language: 'en',
+    csrf: 'pbhhFUibUGxmqpvTGypGp2Wk6rZd7HfS',
+    urls: {
+        static: '/static/',
+        media: '/media/',
+        api: '/en/api/v1'
+    },user: {
+        username: '',
+        fullname: '' 
+    } 
+}
+</script> 
+	<link rel="stylesheet" href="/static/monica/css/theme.css">
+	<script src="/static/monica/js/modernizr.js"></script> 
+    <span></span>
+    {% render_block "css" %}
+</head> 
+<body class=""> 
+{% cms_toolbar %}
+	<script>
+		window.touch=('ontouchstart' in window);
+		if(touch)document.body.className+=' touch';
+	</script> 
+	<header id="header">
+		<!-- <div id="titles"> -->
+		<div style="padding: 27px 0 5px 30px">
+			<a href="/" title="Go back to the home page">
+				<h1 class="title" style="display: inline; font-family: Times; color: red">artuus</h1>
+				<h2 class="subtitle" style="display: inline; font-family: Times"></h2>
+			</a>
+		</div>
+		<div id="navigation">
+			<nav id="section" class="verbose"> 
+                <a href="#" class="active"> Current</a> 
+                <a href="#"> Past</a> 
+                <a href="#"> Upcoming</a> 
+                <a href="#"> Artists</a> 
+                <a href="#"> News</a> 
+                <a href="#"> Contact</a> 
+			</nav>
+			<nav id="section" class="compact"> 
+                <select name="location"> 
+                    <option selected="selected" value="" data-display="Navigate to..." data-browsing="&nbsp;">Navigate to...</option> 
+                    <option value="" disabled="disabled">Photography</option> 
+                    <option value="#" data-browsing="· · " data-display="MILANO: "> MILANO: Current exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="MILANO: "> MILANO: Past exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="MILANO: "> MILANO: Upcoming exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="MILANO: "> MILANO: Artists</option> 
+                    <option value="#" data-browsing="· · " data-display="MILANO: "> MILANO: News</option> 
+                    <option value="#" data-browsing="· · " data-display="MILANO: "> MILANO: Contact</option>
+
+                    <option value="" disabled="disabled">Paintings</option> 
+                    <option value="#" data-browsing="· · " data-display="ZUOZ: "> ZUOZ: Current exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="ZUOZ: "> ZUOZ: Past exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="ZUOZ: "> ZUOZ: Upcoming exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="ZUOZ: "> ZUOZ: Artists</option> 
+                    <option value="#" data-browsing="· · " data-display="ZUOZ: "> ZUOZ: News</option> 
+                    <option value="#" data-browsing="· · " data-display="ZUOZ: "> ZUOZ: Contact</option>
+
+                    <option value="" disabled="disabled">Sculpture</option> 
+                    <option value="#" data-browsing="· · " data-display="LUGANO: "> LUGANO: Current exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="LUGANO: "> LUGANO: Past exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="LUGANO: "> LUGANO: Upcoming exhibitions</option> 
+                    <option value="#" data-browsing="· · " data-display="LUGANO: "> LUGANO: Artists</option> 
+                    <option value="#" data-browsing="· · " data-display="LUGANO: "> LUGANO: News</option> 
+                    <option value="#" data-browsing="· · " data-display="LUGANO: "> LUGANO: Contact</option> 
+                </select> 
+			</nav>
+			<nav id="location"> 
+                <a href="#" class="active"> Photography</a> 
+                <a href="#"> Paintings</a> 
+                <a href="#"> Sculpture</a> 
+			</nav>
+		</div>
+	</header>
+
+	<div id="container">
+		
+			<section id="sidebar" class="column sidebar"> 
+                <header class="header">
+                    <nav class="current-exhibition-switch">
+                        <ul class="nav">
+                            {% show_menu 0 100 100 100 %}
+                        </ul>
+                    </nav>
+                    <h2 class="subtitle"></h2>
+                    <div class="subtitle">November 19, 2014 - March 28, 2015</div>
+                </header> 
+			</section>
+			<section id="content" class="column content">
+                {% block content %}Content{% endblock %} 
+            </section>
+    <section style="top: 198px;" id="side-navi" class="column side-navi"> 
+        <nav class="navigation tabs" data-tabs=""> 
+            <div><a href="#works">Works</a></div> 
+            <!-- <div><a href="#installation&#45;views">Installation views</a></div>  -->
+            <div><a href="#press-release">Press release</a></div> 
+            <div><a href="#texts">Texts</a></div> 
+        </nav> 
+        <section id="image-caption" class="caption"><div class="title"> Cinema<span class="year">, 2014</span></div><div class="description"><p>oil on board<br>cm 61 x 98</p></div>
+            <div class="count"> 1 of 16 </div>
+        </section> 
+    </section> 
+	</div>
+
+	<footer id="footer"> 
+		<div class="contact">
+			<a class="email" href="mailto:info@artuus.com">info@artuus.com</a> 
+            <a href="https://www.facebook.com/pages/artuus" class="social icon facebook icon-facebook-sign" title="Reach us on facebook"></a> 
+		</div> 
+		<div class="identity">
+			<strong class="name">Artuus</strong>
+			<span class="address">
+                18 Bridge St
+                Niceplace
+                Switzerland 08530 
+			</span>
+		</div> 
+	</footer> 
+
+	<script src="/static/monica/js/vendor.js"></script>
+	<script src="/static/monica/js/theme.js"></script>
+	<script>;require('scripts');</script>
+
+    <div id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd"></div>
+{% render_block "js" %}
+</body></html>

@@ -1,0 +1,93 @@
+{% extends "monica/base.html" %}
+{% load cms_tags %}
+
+{% block title %}{% page_attribute 'title' %}{% endblock title %}
+
+{% block content %}
+	<div class="content-sections"> 
+		<section style="display: none;" id="installation-views" class="section installation-views">
+			<header class="header">
+				<h1 class="title">Installation views</h1>
+			</header> 
+            <div class="image-gallery installation-views" data-gallery="" data-caption-to="#image-caption"> 
+                <div class="wrapper">
+                    <ul class="items">
+                    </ul>
+                </div>
+            </div> 
+		</section> 
+        {% placeholder "content" %}
+		<section style="display: none;" id="press-release" class="section press-release">
+			<header class="header">
+				<h1 class="title">Press release</h1>
+			</header> 
+            <div class="content">
+            </div> 
+            <div class="content-alt">
+            </div> 
+            <div class="attachment download download-press-release">
+                <!-- <a href="/media/attachments/2014/11/18/savu%20pdf.pdf"> </a> -->
+                <!-- <a href="/media/attachments/2014/11/18/savu%20pdf.pdf"> -->
+                <!--     <div class="title">Sometimes my Eyes are the Eyes of a Stranger</div> -->
+                <!--     <div class="description"> </div> -->
+                <!--     <div class="download"> Download here in “.pdf” format &#45; 143.1 KB </div> -->
+                <!-- </a> -->
+            </div> 
+		</section> 
+		<section style="display: none;" id="texts" class="section texts">
+			<header class="header">
+				<h1 class="title">Texts</h1>
+			</header>
+			
+			
+			<h3 class="artist">Serban Savu</h3>
+			<ul class="list attachments">
+				
+				<li class="item attachment">
+					
+
+
+
+<a href="/media/attachments/2014/10/14/Savu_Phaidon_2011.pdf">
+	<div class="title">S. Savu_ Phaidon 2011</div>
+	<div class="description">
+		
+	</div>
+	<div class="download">
+		
+			Download here in “.pdf” format
+		 -
+		455.4 KB
+	</div>
+</a>
+
+				</li>
+				
+				<li class="item attachment">
+					
+
+
+
+<a href="/media/attachments/2014/10/14/ouverture:jane%20neal:flashart.jpg">
+	<div class="title">S.Savu _ Flash Art 2008</div>
+	<div class="description">
+		
+	</div>
+	<div class="download">
+		
+			Download here in “.jpg” format
+		 -
+		1.4 MB
+	</div>
+</a>
+
+				</li>
+				
+			</ul>
+			
+			
+		</section>
+		
+
+	</div>
+{% endblock content %}
