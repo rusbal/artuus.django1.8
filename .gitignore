@@ -1,4 +1,5 @@
 *.pyc
+*.sw?
 sourceme.sh
 virtualenv
 arts/arts/public/
