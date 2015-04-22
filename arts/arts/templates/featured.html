@@ -1,0 +1,24 @@
+{% extends "featured-base.html" %}
+
+{% block nav %}
+    <nav id="location"> 
+        {% for album in albums %}
+        <a href="{% url 'imagestore:album_page' album.slug %}"> {{ album.name }}</a>
+        {% endfor %}
+    </nav>
+{% endblock %} 
+
+{% block featured_images %}
+
+<div id="slideshow" class="slideshow" data-slideshow="" style="background: none repeat scroll 0% 0% transparent; position: absolute; z-index: 0;"> 
+
+    {% for image in featured_images %}
+        <img data-src="{{ MEDIA_URL }}{{ image.image }}">
+    {% endfor %}
+
+    <div style="left: 0px; top: 0px; overflow: hidden; margin: 0px; padding: 0px; height: 974px; width: 1359px; z-index: -999998; position: absolute;" class="backstretch">
+        <img src="{{ MEDIA_URL }}{{ featured.images.last.image }}" style="position: absolute; margin: 0px; padding: 0px; border: medium none; width: 1461px; height: 974px; max-height: none; max-width: none; z-index: -999999; display: inline; left: -51px; top: 0px;">
+    </div>
+</div> 
+
+{% endblock %} 

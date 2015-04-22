@@ -1,0 +1,20 @@
+<div class="image-gallery works" data-gallery="" data-caption-to="#image-caption">
+	<div class="wrapper">
+        <ul style="width: 11316px; transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1);" class="items animate">
+
+    {% for image in album_images %}
+
+            <li style="width: 943px;" class="item image work" data-type="picture">
+                <div class="container"><img style="margin-top: 23px; width: 958px; height: 743px;" src="{{ MEDIA_URL }}{{ image.image }}" alt="Liegende I"></div>
+                <div class="caption">
+                    <div class="title">{{ image.title }}<span class="year"></span></div>
+                    <div class="description">{{ image.description }}</div>
+                    <div class="count"> {{ forloop.counter }} of {{ album_images|length }} </div>
+                </div>
+            </li>
+
+    {% endfor %}
+                            
+        </ul>
+	</div>
+<button data-dir="prev" class="control prev hidden"></button><button data-dir="next" class="control next"></button></div>

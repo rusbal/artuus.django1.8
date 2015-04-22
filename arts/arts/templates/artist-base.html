@@ -1,4 +1,4 @@
-{% load cms_tags menu_tags sekizai_tags %}
+{% load sekizai_tags %}
 <!DOCTYPE html>
 <html style="" class="  page-exhibitions page-exhibition page-exhibition-current js no-touch hashchange history draganddrop backgroundsize csstransforms csstransforms3d csstransitions localstorage"><head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -33,7 +33,6 @@ window.settings = {
     {% render_block "css" %}
 </head> 
 <body class=""> 
-{% cms_toolbar %}
 	<script>
 		window.touch=('ontouchstart' in window);
 		if(touch)document.body.className+=' touch';
@@ -97,7 +96,7 @@ window.settings = {
                 <header class="header">
                     <nav class="current-exhibition-switch">
                         <ul class="nav">
-                            {% show_menu 0 100 100 100 %}
+                            {% block nav %} Navigation {% endblock %} 
                         </ul>
                     </nav>
                     <h2 class="subtitle"></h2>

@@ -4,3 +4,4 @@ sourceme.sh
 virtualenv
 arts/arts/public/
 secrets.py
+arts/copy?/

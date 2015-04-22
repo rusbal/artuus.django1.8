@@ -102,4 +102,14 @@
     $('#id_user').change(function(){
         $('a.inline-deletelink').parents('tr').remove();
     });
+
+    $('input[name$=is_featured]').change(function(){
+        var featured = $(this).attr('id');
+        if ($(this).is(':checked')) {
+            $('input[name$=is_featured]').each(function(index) {
+                $(this).prop('checked', (featured == ($(this).attr('id'))))
+            });
+        }
+    });
+
 });})(django.jQuery);

@@ -1,0 +1,11 @@
+Django==1.8
+sorl-thumbnail
+django-autocomplete-light
+django-tagging
+Pillow
+git+git://github.com/ojii/django-sekizai
+django-simple-menu
+django-uuslug
+django-wysiwyg
+django-ckeditor
+django-activelink

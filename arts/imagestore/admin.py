@@ -40,11 +40,14 @@ class InlineImageAdmin(AdminInlineImageMixin, admin.TabularInline):
 
 class AlbumAdmin(FilterUserAdmin):
     form = AlbumAdminForm
-    fields = ('name', 'user', 'is_public')
-    list_display = ('name', 'owner', 'admin_thumbnail', 'image_count', 'is_public', 'order')
-    list_editable = ('order', 'is_public')
-    list_filter = ('user', 'is_public')
+    fields = ('name', 'user', 'desc', 'is_public')
+    list_display = ('name', 'owner', 'admin_thumbnail', 'image_count', 'is_public', 'is_featured', 'order')
+    list_editable = ('order', 'is_public', 'is_featured')
+    list_filter = ('user', 'is_public', 'is_featured')
     inlines = [InlineImageAdmin]
+    save_as = True
+
+    change_form_template = 'imagestore/admin/change_form.html'
 
     class Media:
         static_url = getattr(settings, 'STATIC_URL', '/static/')
@@ -53,13 +56,13 @@ class AlbumAdmin(FilterUserAdmin):
     def owner(self, obj):
         return obj.user.get_full_name()
 
-    def queryset(self, request):
-        qs = super(AlbumAdmin, self).queryset(request) 
-        return qs.annotate(image_count=Count('images'))
+    # def queryset(self, request):
+    #     qs = super(AlbumAdmin, self).queryset(request) 
+    #     return qs.annotate(image_count=Count('images'))
 
     def image_count(self, inst):
         try:
-            return inst.image_count
+            return inst.images.count()
         except:
             return 0
     image_count.admin_order_field = 'image_count'

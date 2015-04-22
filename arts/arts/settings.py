@@ -22,6 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -44,6 +45,9 @@ INSTALLED_APPS = (
     # Template Apps
     'menu', # django-simple-menu
     'sekizai',
+    'django_wysiwyg',
+    'ckeditor',
+    'activelink',
 
     'imagestore',
 )
@@ -78,8 +82,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
                 'sekizai.context_processors.sekizai',
-                'imagestore.context_processors.imagestore_processor',
+                'imagestore.context_processors.albums',
             ],
         },
     },
@@ -117,4 +122,12 @@ STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'arts', 'static'),
 ) 
 
+DJANGO_WYSIWYG_FLAVOR = "ckeditor"
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_JQUERY_URL = '//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js'
+CKEDITOR_CONFIGS = {
+    'awesome_ckeditor': {
+        'toolbar': 'Basic',
+    },
+}
 

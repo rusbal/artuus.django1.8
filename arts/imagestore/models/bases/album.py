@@ -9,6 +9,7 @@ from django.db.models import permalink
 from django.utils.translation import ugettext_lazy as _
 from django.conf import settings
 from sorl.thumbnail import get_thumbnail
+from uuslug import uuslug
 import logging
 
 logger = logging.getLogger(__name__)
@@ -44,7 +45,10 @@ class BaseAlbum(models.Model):
     created = models.DateTimeField(_('Created'), auto_now_add=True)
     updated = models.DateTimeField(_('Updated'), auto_now=True)
     is_public = models.BooleanField(_('Is public'), default=True)
+    is_featured = models.BooleanField(_('Is featured'), default=False)
     head = models.ForeignKey(get_model_string('Image'), related_name='head_of', null=True, blank=True, on_delete=models.SET_NULL)
+    slug = models.SlugField()
+    desc = models.TextField(_('Description'))
 
     order = models.IntegerField(_('Order'), default=0)
 
@@ -70,6 +74,9 @@ class BaseAlbum(models.Model):
     def __unicode__(self):
         return self.name
 
+    def __str__(self):
+        return self.name
+
     def admin_thumbnail(self):
         img = self.get_head()
         if img:
@@ -86,3 +93,8 @@ class BaseAlbum(models.Model):
     def name_with_owner(self):
         full_name = self.user.get_full_name() or self.user.username
         return self.name + ' (' + full_name + ')'
+
+    def save(self, *args, **kwargs):
+        # self.slug = uuslug(self.name, instance=self, separator="_") # optional non-dash separator
+        self.slug = uuslug(self.name, instance=self)
+        super(BaseAlbum, self).save(*args, **kwargs)

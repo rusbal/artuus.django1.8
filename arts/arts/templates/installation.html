@@ -1,0 +1,33 @@
+<div class="image-gallery installation-views" data-gallery="" data-caption-to="#image-caption">
+	<div class="wrapper">
+        <ul style="width: 5658px; transform: translate3d(0%, 0px, 0px) scale3d(1, 1, 1);" class="items animate">
+            
+        {% for image in album_images %}
+
+            <li style="width: 943px;" class="item image installation-view" data-type="picture">
+                <div class="container"><img style="margin-top: 80px; width: 943px; height: 629px;" src="{{ MEDIA_URL }}{{ image.image }}" alt=""></div>
+                <div class="caption">
+                    <div class="title"></div>
+                    <div class="description"></div>
+                    <div class="count"> {{ forloop.counter }} of {{ album_images|length }} </div>
+                </div>
+            </li>
+                            
+        {% endfor %}
+
+<!-- <li style="width: 943px;" class="item image installation&#45;view" data&#45;type="picture"><div class="container"><img style="margin&#45;top: 80px; width: 943px; height: 629px;" src="/media/galleria_files/e226785c4f3873b895581b46eb6f475d.jpg" alt=""></div><div class="caption"><div class="title"></div><div class="description"></div><div class="count"> -->
+<!-- 2 of 6 -->
+<!-- </div></div></li><li style="width: 943px;" class="item image installation&#45;view" data&#45;type="picture"><div class="container"><img style="margin&#45;top: 90px; width: 943px; height: 609px;" src="/media/galleria_files/ea993735900a77b3d6478de7b4d9b486.jpg" alt=""></div><div class="caption"><div class="title"></div><div class="description"></div><div class="count"> -->
+<!-- 3 of 6 -->
+<!-- </div></div></li><li style="width: 943px;" class="item image installation&#45;view" data&#45;type="picture"><div class="container"><img style="margin&#45;top: 79.5px; width: 943px; height: 630px;" src="/media/galleria_files/3202fcdee9e9736aaa0566872af1d684.jpg" alt=""></div><div class="caption"><div class="title"></div><div class="description"></div><div class="count"> -->
+<!-- 4 of 6 -->
+<!-- </div></div></li><li style="width: 943px;" class="item image installation&#45;view" data&#45;type="picture"><div class="container"><img style="margin&#45;top: 89px; width: 943px; height: 611px;" src="/media/galleria_files/892b4dc7249e24c17b56c1670b3d30e9.jpg" alt=""></div><div class="caption"><div class="title"></div><div class="description"></div><div class="count"> -->
+<!-- 5 of 6 -->
+<!-- </div></div></li><li style="width: 943px;" class="item image installation&#45;view" data&#45;type="picture"><div class="container"><img style="margin&#45;top: 80px; width: 943px; height: 629px;" src="/media/galleria_files/a627007b31afa4e635306c5f76c0a97b.jpg" alt=""></div><div class="caption"><div class="title"></div><div class="description"></div><div class="count"> -->
+<!-- 6 of 6 -->
+<!-- </div></div></li> -->
+
+        </ul>
+	</div>
+<button data-dir="prev" class="control prev hidden"></button><button data-dir="next" class="control next"></button></div>
+

@@ -64,6 +64,9 @@ class BaseImage(models.Model):
     def __unicode__(self):
         return '%s' % self.title
 
+    def __str__(self):
+        return '%s' % self.title
+
     def admin_thumbnail_path(self):
         try:
             return get_thumbnail(self.image, '100x100', crop='center').url

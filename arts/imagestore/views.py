@@ -18,6 +18,8 @@ from tagging.utils import get_tag
 
 from .utils import load_class
 
+from .views_integration.views import *
+
 try:
     from django.contrib.auth import get_user_model
     User = get_user_model()

@@ -1,0 +1,202 @@
+{% load activelink %}
+<!DOCTYPE html>
+<html style="" class="  page-exhibitions page-exhibition page-exhibition-current js no-touch hashchange history draganddrop backgroundsize csstransforms csstransforms3d csstransitions localstorage"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="/static/galleria/js/analytics.js" async=""></script><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</script><meta charset="utf-8">
+	<title>artuus</title>
+	<script>(function(){
+		var html = document.documentElement;
+		html.className = html.className.replace('no-js', '');
+	})();</script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!--[if lt IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7/html5shiv.js"></script><![endif]-->
+		<link rel="shortcut icon" href="http://artuus.com/static/favicon.ico">
+		<link sizes="57x57" href="http://artuus.com/static/touch-icons/57.png" rel="apple-touch-icon">
+		<link sizes="72x72" href="http://artuus.com/static/touch-icons/72.png" rel="apple-touch-icon">
+		<link sizes="114x114" href="http://artuus.com/static/touch-icons/114.png" rel="apple-touch-icon">
+		<link sizes="144x144" href="http://artuus.com/static/touch-icons/144.png" rel="apple-touch-icon">
+	<script>window.settings = {
+		static_url: '/static/',
+		language: 'en',
+		csrf: 'FVLJsJSBABDza2mju1StB4CDv9TZkC5O',
+		urls: {
+			static: '/static/',
+			media: '/media/',
+			api: '/en/api/v1'
+		}
+			,user: {
+				username: '',
+				fullname: ''
+			}
+	}</script>
+	<link rel="stylesheet" href="/static/galleria/css/theme.css">
+	<script src="/static/galleria/js/modernizr.js"></script>
+<span></span></head>
+<body class="">
+	<script>
+		window.touch=('ontouchstart' in window);
+		if(touch)document.body.className+=' touch';
+	</script>
+	<header id="header">
+		<!-- <div id="titles"> -->
+		<!-- 	<a href="/" title="Go back to the home page"> -->
+		<!-- 		<h1 class="title">artuus</h1> -->
+		<!-- 		<h2 class="subtitle"></h2> -->
+		<!-- 	</a> -->
+		<!-- </div> -->
+		<div style="padding: 27px 0 5px 30px">
+			<a href="/" title="Go back to the home page">
+				<h1 class="title" style="display: inline; font-family: Times; color: red">artuus</h1>
+				<h2 class="subtitle" style="display: inline; font-family: Times"></h2>
+			</a>
+		</div>
+		<div id="navigation">
+			<nav id="section" class="verbose">
+                <a href="#" class="active"> Current</a>
+                <a href="#"> Past</a>
+                <a href="#"> Upcoming</a>
+                <a href="#"> Artists</a>
+                <a href="#"> News</a>
+                <a href="#"> Contact</a>
+			</nav>
+			<nav id="section" class="compact">
+<select name="location">
+	<option selected="selected" value="" data-display="Navigate to..." data-browsing="&nbsp;">Navigate to...</option>
+		<option value="" disabled="disabled">Milano</option>
+		<option value="/milano/exhibitions/" data-browsing="· · " data-display="MILANO: ">
+				MILANO: Current exhibitions</option>
+		<option value="/milano/exhibitions/past/" data-browsing="· · " data-display="MILANO: ">
+				MILANO: Past exhibitions</option>
+		<option value="/milano/exhibitions/upcoming/" data-browsing="· · " data-display="MILANO: ">
+				MILANO: Upcoming exhibitions</option>
+		<option value="/milano/artists/" data-browsing="· · " data-display="MILANO: ">
+				MILANO: Artists</option>
+		<option value="/milano/news/" data-browsing="· · " data-display="MILANO: ">
+				MILANO: News</option>
+		<option value="/milano/contact/" data-browsing="· · " data-display="MILANO: ">
+				MILANO: Contact</option>
+		<option value="" disabled="disabled">Zuoz</option>
+		<option value="/zuoz/exhibitions/" data-browsing="· · " data-display="ZUOZ: ">
+				ZUOZ: Current exhibitions</option>
+		<option value="/zuoz/exhibitions/past/" data-browsing="· · " data-display="ZUOZ: ">
+				ZUOZ: Past exhibitions</option>
+		<option value="/zuoz/exhibitions/upcoming/" data-browsing="· · " data-display="ZUOZ: ">
+				ZUOZ: Upcoming exhibitions</option>
+		<option value="/zuoz/artists/" data-browsing="· · " data-display="ZUOZ: ">
+				ZUOZ: Artists</option>
+		<option value="/zuoz/news/" data-browsing="· · " data-display="ZUOZ: ">
+				ZUOZ: News</option>
+		<option value="/zuoz/contact/" data-browsing="· · " data-display="ZUOZ: ">
+				ZUOZ: Contact</option>
+		<option value="" disabled="disabled">Lugano</option>
+		<option value="/lugano/exhibitions/" data-browsing="· · " data-display="LUGANO: ">
+				LUGANO: Current exhibitions</option>
+		<option value="/lugano/exhibitions/past/" data-browsing="· · " data-display="LUGANO: ">
+				LUGANO: Past exhibitions</option>
+		<option value="/lugano/exhibitions/upcoming/" data-browsing="· · " data-display="LUGANO: ">
+				LUGANO: Upcoming exhibitions</option>
+		<option value="/lugano/artists/" data-browsing="· · " data-display="LUGANO: ">
+				LUGANO: Artists</option>
+		<option value="/lugano/news/" data-browsing="· · " data-display="LUGANO: ">
+				LUGANO: News</option>
+		<option value="/lugano/contact/" data-browsing="· · " data-display="LUGANO: ">
+				LUGANO: Contact</option>
+</select>
+			</nav>
+			<nav id="location"> 
+                <a href="#" class="active"> Photography</a> 
+                <a href="#"> Paintings</a> 
+                <a href="#"> Sculpture</a> 
+			</nav>
+		</div>
+	</header>
+	<div id="container">
+			<section id="sidebar" class="column sidebar">
+	<header class="header">
+		<nav class="current-exhibition-switch">
+
+        {% block nav %}
+            {% for album in albums %}
+                <a href="{% url 'imagestore:album_page' album.slug %}" class="{% ifactive 'imagestore:album_page' album.slug %}active{% endifactive %}"><h1 class="title">{{ album.name }}</h1></a>
+            {% endfor %}
+        {% endblock %} 
+
+		</nav>
+		<h2 class="subtitle"></h2>
+		<div class="subtitle">January 15 - May 30, 2015</div>
+	</header>
+			</section>
+			<section id="content" class="column content">
+	<div class="content-sections">
+		<section style="display: none;" id="installation-views" class="section installation-views">
+			<header class="header">
+				<h1 class="title">Installation views</h1>
+			</header>
+
+            {% include 'installation.html' %}
+
+		</section>
+		<section style="display: block;" id="works" class="section images">
+			<header class="header">
+				<h1 class="title">Images</h1>
+			</header>
+
+            {% include 'works.html' %}
+
+		</section>
+		<section style="display: none;" id="press-release" class="section press-release">
+			<header class="header">
+				<h1 class="title">Press release</h1>
+			</header>
+
+            {% include 'press.html' %}
+
+		</section>
+	</div>
+			</section>
+			<section style="top: 198px;" id="side-navi" class="column side-navi">
+	<nav class="navigation tabs" data-tabs="">
+			<div><a class="" href="#works">Works</a></div>
+			<div><a class="" href="#installation-views">Installation views</a></div>
+			<div><a class="" href="#press-release">Press release</a></div>
+	</nav>
+	<section id="image-caption" class="caption"><div class="title">
+						Liegende I<span class="year">,
+							2014</span></div><div class="description"><p>mixed media on cotton<br>cm 225 x 290</p></div><div class="count">
+							1 of 12
+					</div></section>
+			</section>
+	</div>
+	<footer id="footer">
+		<div class="contact">
+			<a class="email" href="mailto:info@artuus.com">info@artuus.com</a>
+				<a href="https://www.facebook.com/pages/Galleria-Monica-De-Cardenas/184339718287072" class="social icon facebook icon-facebook-sign" title="Reach us on facebook"></a>
+		</div>
+		<div class="identity">
+			<strong class="name">Monica De Cardenas</strong>
+			<span class="address">
+				Via Coremmo 11 ,
+				CH-6900 Lugano  -
+				Switzerland
+			</span>
+		</div>
+	</footer>
+	<script src="/static/galleria/js/vendor.js"></script>
+	<script src="/static/galleria/js/theme.js"></script>
+	<script>;require('scripts');</script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-42604165-1', 'zenoamaro.com');
+		ga('send', 'pageview');
+	</script>
+<script type="text/javascript">if(!NREUMQ.f){NREUMQ.f=function(){NREUMQ.push(["load",new Date().getTime()]);var e=document.createElement("script");e.type="text/javascript";e.src=(("http:"===document.location.protocol)?"http:":"https:")+"//"+"js-agent.newrelic.com/nr-100.js";document.body.appendChild(e);if(NREUMQ.a)NREUMQ.a();};NREUMQ.a=window.onload;window.onload=NREUMQ.f;};NREUMQ.push(["nrfj","bam.nr-data.net","cd16e1f3f7","2573155","b1MEYkJYVkAEU0QPClYZIENeWkxaCl4fABdXWBIYRlBdRBYeVR4NUVQPQllWVkBfVUgODFpfEl9fVw==",0,324,new Date().getTime(),"","","","",""]);</script>
+<div id="xunlei_com_thunder_helper_plugin_d462f475-c18e-46be-bd10-327458d045bd"></div><script src="/static/galleria/js/nr-100.js" type="text/javascript"></script><script src="/static/galleria/js/cd16e1f3f7.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+    $('#works').addClass('active').show();
+});
+</script>
+</body>
+</html>

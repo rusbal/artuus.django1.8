@@ -1,7 +1,14 @@
-{% extends "monica/base.html" %}
-{% load cms_tags %}
+{% extends "base.html" %}
 
-{% block title %}{% page_attribute 'title' %}{% endblock title %}
+{% block title %}{% endblock title %}
+
+{% block nav %}
+    <nav id="location"> 
+        {% for album in albums %}
+        <a href="{% url 'imagestore:album_page' album.slug %}"> {{ album.name }}</a>
+        {% endfor %}
+    </nav>
+{% endblock %} 
 
 {% block content %}
 	<div class="content-sections"> 
@@ -9,6 +16,9 @@
 			<header class="header">
 				<h1 class="title">Installation views</h1>
 			</header> 
+
+            {% include "works.html" %}
+
             <div class="image-gallery installation-views" data-gallery="" data-caption-to="#image-caption"> 
                 <div class="wrapper">
                     <ul class="items">
@@ -16,7 +26,6 @@
                 </div>
             </div> 
 		</section> 
-        {% placeholder "content" %}
 		<section style="display: none;" id="press-release" class="section press-release">
 			<header class="header">
 				<h1 class="title">Press release</h1>

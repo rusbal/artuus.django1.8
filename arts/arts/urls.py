@@ -7,7 +7,9 @@ admin.autodiscover()
 
 
 urlpatterns = patterns('',
-    url(r'^$', include('imagestore.urls', namespace='imagestore')),
+    url(r'^$', 'imagestore.views.featured_page', name='featured_page'),
+    url(r'^works/', include('imagestore.urls', namespace="imagestore")),
+    (r'^ckeditor/', include('ckeditor.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 

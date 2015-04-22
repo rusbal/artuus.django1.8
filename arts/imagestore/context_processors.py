@@ -5,6 +5,7 @@ from django.conf import settings
 
 from .utils import get_model_string
 from .models import image_applabel, image_classname, album_applabel, album_classname
+from .models.album import Album
 
 def imagestore_processor(request):
     template = getattr(settings, 'IMAGESTORE_TEMPLATE', False)
@@ -26,4 +27,6 @@ def imagestore_processor(request):
     }
     return ret
 
+def albums(request):
+    return {'albums': Album.objects.filter(is_public=True)}
   
