@@ -15,7 +15,7 @@ def get_image_to_owner(request):
         success = True
     except:
         success = False
-    return HttpResponse(json.dumps({'success': success, 'image_owner': img2owner}), mimetype="application/json")
+    return HttpResponse(json.dumps({'success': success, 'image_owner': img2owner}), content_type="application/json")
 
 
 def get_image_thumbs(request):
@@ -27,4 +27,4 @@ def get_image_thumbs(request):
         success = True
     except:
         success = False
-    return HttpResponse(json.dumps({'success': success, 'thumbs': thumbs}), mimetype="application/json")
+    return HttpResponse(json.dumps({'success': success, 'thumbs': thumbs}), content_type="application/json")

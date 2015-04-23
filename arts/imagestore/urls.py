@@ -10,3 +10,4 @@ urlpatterns = patterns('',
     # url(r'^artist/', views.album_page, name='album_page'),
     url(r'^artist/(?P<slug>[\w-]+)/$', views.album_page, name='album_page'),
 )
+
