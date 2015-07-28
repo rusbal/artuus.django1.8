@@ -44,7 +44,6 @@ INSTALLED_APPS = (
 
     # Template Apps
     'menu', # django-simple-menu
-    'sekizai',
     'django_wysiwyg',
     'ckeditor',
     'activelink',
@@ -83,7 +82,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
-                'sekizai.context_processors.sekizai',
+                # 'sekizai.context_processors.sekizai',
                 'imagestore.context_processors.albums',
             ],
         },
