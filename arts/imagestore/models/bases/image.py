@@ -59,9 +59,9 @@ class BaseImage(models.Model):
     updated = models.DateTimeField(_('Updated'), auto_now=True, null=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name=_('Owner'), related_name='images', blank=True, null=True)
     albums = models.ManyToManyField(get_model_string('Album'), through='AlbumImage', verbose_name=_('Album'), related_name='images')
-    image_datetime = models.DateTimeField(default=datetime.datetime.now)
-    image_place = models.CharField(max_length=100, default=None)
-    image_remarks = models.CharField(max_length=100, default=None)
+    image_datetime = models.DateTimeField(_('Image datetime'), default=datetime.datetime.now)
+    image_place = models.CharField(_('Place'), max_length=100, default=None)
+    image_remarks = models.CharField(_('Remarks'), max_length=100, default=None)
 
     @permalink
     def get_absolute_url(self):

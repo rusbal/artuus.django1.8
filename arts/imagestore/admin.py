@@ -72,10 +72,10 @@ admin.site.register(Album, AlbumAdmin)
 
 class ImageAdmin(FilterUserAdmin):
     form = ImageAdminForm
-    fieldsets = ((None, {'fields': ['mediafile', 'image', 'title', 'description', 'user', 'tags']}),)
-    list_display = ('admin_thumbnail', 'title', 'user')
+    fieldsets = ((None, {'fields': ['mediafile', 'image', 'title', 'description', 'image_place', 'image_remarks', 'image_datetime', 'user', 'tags']}),)
+    list_display = ('admin_thumbnail', 'title', 'user', 'image_place', 'image_remarks', 'image_datetime')
     list_filter = ('user', 'albums', )
-    list_editable = ('title', )
+    list_editable = ('title', 'image_place', 'image_remarks', 'image_datetime')
 
     class Media:
         static_url = getattr(settings, 'STATIC_URL', '/static/')
